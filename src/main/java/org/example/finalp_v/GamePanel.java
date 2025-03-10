@@ -83,7 +83,10 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
                 new Platform(1050, 300, 200, 10),
                 new Platform(1300, 200, 200, 10),
                 new Platform(1550, 400, 200, 10),
-                new Platform(1800, 300, 200, 10)
+                new Platform(1800, 300, 200, 10),
+                new Platform(2000, 200, 100, 10),
+                new Platform(2200, 300, 200, 10),
+                new Platform(2500, 400, 200, 10)
         };
     }
 
@@ -95,6 +98,11 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
         enemies.add(new Enemy(1200, 450, "C:\\Users\\Matan\\IdeaProjects\\finalp_v\\src\\main\\java\\org\\example\\finalp_v\\media\\heart-icon.png"));
         enemies.add(new Enemy(1500, 350, "C:\\Users\\Matan\\IdeaProjects\\finalp_v\\src\\main\\java\\org\\example\\finalp_v\\media\\heart-icon.png"));
         enemies.add(new Enemy(1800, 450, "C:\\Users\\Matan\\IdeaProjects\\finalp_v\\src\\main\\java\\org\\example\\finalp_v\\media\\heart-icon.png"));
+        enemies.add(new Enemy(2000, 350, "C:\\Users\\Matan\\IdeaProjects\\finalp_v\\src\\main\\java\\org\\example\\finalp_v\\media\\heart-icon.png"));
+        enemies.add(new Enemy(2200, 250, "C:\\Users\\Matan\\IdeaProjects\\finalp_v\\src\\main\\java\\org\\example\\finalp_v\\media\\heart-icon.png"));
+        enemies.add(new Enemy(2400, 100, "C:\\Users\\Matan\\IdeaProjects\\finalp_v\\src\\main\\java\\org\\example\\finalp_v\\media\\heart-icon.png"));
+        enemies.add(new Enemy(2000, 100, "C:\\Users\\Matan\\IdeaProjects\\finalp_v\\src\\main\\java\\org\\example\\finalp_v\\media\\heart-icon.png"));
+
         return enemies;
     }
 
