@@ -89,7 +89,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
                 new Platform(2500, 400, 200, 10)
         };
     }
-
+//
     private List<Enemy> createEnemies() {
         // Add enemies for the level
         List<Enemy> enemies = new ArrayList<>();
