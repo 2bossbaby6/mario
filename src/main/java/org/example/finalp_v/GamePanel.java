@@ -151,6 +151,10 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
     public void keyPressed(KeyEvent e) {
         // Add the key to the set of pressed keys
         keysPressed.add(e.getKeyCode());
+        // Check if the Enter key is pressed to restart the game
+        if (isGameOver && e.getKeyCode() == KeyEvent.VK_ENTER) {
+            restartGame();
+        }
     }
 
     @Override
@@ -167,6 +171,14 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
     public void gameOver() {
         isGameOver = true;
         player.setAlive(false);
+    }
+
+    public void restartGame() {
+        isGameOver = false;
+        player = new Player(400, 100, this); // Reset the player
+        platforms = createPlatforms(); // Reset the platforms
+        floor = new Floor(0, 500, 800, 100); // Reset the floor
+        enemies = createEnemies(); // Reset the enemies
     }
 
     public Player getPlayer() {

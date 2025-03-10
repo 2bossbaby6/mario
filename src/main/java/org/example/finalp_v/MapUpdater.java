@@ -42,25 +42,43 @@ public class MapUpdater {
 
         // Set the player position
         Player player = gamePanel.getPlayer();
-        map[player.getY()][player.getX()] = 4;
+        int playerX = player.getX();
+        int playerY = player.getY();
+        if (isValidPosition(playerX, playerY)) {
+            map[playerY][playerX] = 4;
+        }
 
         // Set the platforms positions
         for (Platform platform : gamePanel.getPlatforms()) {
             for (int x = platform.getX(); x < platform.getX() + platform.getWidth(); x++) {
-                map[platform.getY()][x] = 1;
+                int y = platform.getY();
+                if (isValidPosition(x, y)) {
+                    map[y][x] = 1;
+                }
             }
         }
 
         // Set the floor positions
         Floor floor = gamePanel.getFloor();
         for (int x = floor.getX(); x < floor.getX() + floor.getWidth(); x++) {
-            map[floor.getY()][x] = 2;
+            int y = floor.getY();
+            if (isValidPosition(x, y)) {
+                map[y][x] = 2;
+            }
         }
 
         // Set the enemies positions
         for (Enemy enemy : gamePanel.getEnemies()) {
-            map[enemy.getY()][enemy.getX()] = 3;
+            int enemyX = enemy.getX();
+            int enemyY = enemy.getY();
+            if (isValidPosition(enemyX, enemyY)) {
+                map[enemyY][enemyX] = 3;
+            }
         }
+    }
+
+    private boolean isValidPosition(int x, int y) {
+        return x >= 0 && x < mapWidth && y >= 0 && y < mapHeight;
     }
 
     private void printMap() {
